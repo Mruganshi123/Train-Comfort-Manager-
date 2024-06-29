@@ -1,0 +1,66 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.login-container {
+    background-color: rgb(216, 234, 240);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(60, 33, 33, 0.1);
+    width: 100%;
+    max-width: 400px;
+    border: 1px solid #0056b3;
+}
+
+.login-form {
+    text-align: center; /* Center align the form content */
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    margin-top: 3px;
+    margin-bottom: 7px;
+}
+
+.input-group input {
+    width: calc(70% - 22px); /* Adjusted width to accommodate padding and border */
+    padding: 8px;
+    border: 1px solid #c7c4c4;
+    border-radius: 7px;
+    margin-bottom: 5px;
+}
+
+.btn {
+    width: 50%; /* Make buttons full width of the form */
+    padding: 7px;
+    border: 1px solid black;
+    border-radius: 7px;
+    background-color: #138299;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+.forgot-btn {
+    background-color: #6c757d;
+}
+
+.forgot-btn:hover {
+    background-color: #5a6268;
+}

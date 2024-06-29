@@ -1,0 +1,129 @@
+.user-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%; /* Create round shape */
+    object-fit: cover; /* Maintain aspect ratio and cover entire container */
+    margin: 0 auto 20px; /* Center image and add bottom margin */
+    border: 2px solid #007bff; /* Optional: Add border */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Add box shadow */
+}
+
+
+
+.profile {
+    max-width: 800px; /* Maintain maximum width */
+    margin: 20px auto; /* Center align and add margin */
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.profile h1 {
+    color: #007bff;
+    font-size: 4rem;
+    margin-bottom: 20px;
+}
+
+.section {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.section h2 {
+    color: #333;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center; /* Align icon and text vertically */
+}
+
+.section h2 i {
+    margin-right: 10px; /* Add spacing between icon and text */
+}
+
+.section p, .section ul {
+    text-align: left;
+    font-size: 1em;
+    margin-bottom: 5px;
+}
+
+.section ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.edit-button {
+    display: block;
+    margin: 20px auto;
+    padding: 12px 20px;
+    font-size: 1em;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    
+}
+
+.main-content{
+    color: black;
+}
+.edit-button:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .profile {
+        padding: 15px;
+    }
+
+    .profile h1 {
+        font-size: 1.8em;
+    }
+
+    .section h2 {
+        font-size: 1.3em;
+    }
+
+    .section p, .section ul {
+        font-size: 0.9em;
+    }
+
+    .edit-button {
+        font-size: 0.9em;
+        padding: 10px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile {
+        padding: 10px;
+    }
+
+    .profile h1 {
+        font-size: 1.5em;
+    }
+
+    .section h2 {
+        font-size: 1.2em;
+    }
+
+    .section p, .section ul {
+        font-size: 0.8em;
+    }
+
+    .edit-button {
+        font-size: 0.8em;
+        padding: 8px 12px;
+    }
+}
+
+

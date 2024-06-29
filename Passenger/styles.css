@@ -1,0 +1,124 @@
+
+  .container {
+    width: 100%;
+    margin: 20px auto;
+    margin-top: 40px;
+    max-width: 600px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .profile {
+    text-align: center;
+    
+  }
+  
+  .profile h1 {
+    color: #007bff;
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #333;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .form-group input[type="text"],
+  .form-group input[type="email"],
+  .form-group input[type="tel"] {
+    height: 40px;
+  }
+  
+  .form-group input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
+  
+  .save-button,.cancel-button {
+    padding: 12px 20px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .save-button {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .save-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .cancel-button {
+    background-color: #ccc;
+    color: #333;
+    margin-left: 10px;
+  }
+  
+  .cancel-button:hover {
+    background-color: #bbb;
+  }
+  
+  .message {
+    margin-top: 10px;
+    color: #007bff;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+   .container {
+      padding: 15px;
+    }
+   .profile h1 {
+      font-size: 1.8em;
+    }
+   .form-group input[type="text"],
+   .form-group input[type="email"],
+   .form-group input[type="tel"] {
+      font-size: 0.9em;
+    }
+   .save-button,.cancel-button {
+      font-size: 0.9em;
+      padding: 10px 15px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+   .container {
+      padding: 10px;
+    }
+   .profile h1 {
+      font-size: 1.5em;
+    }
+   .form-group input[type="text"],
+   .form-group input[type="email"],
+   .form-group input[type="tel"] {
+      font-size: 0.8em;
+    }
+   .save-button,.cancel-button {
+      font-size: 0.8em;
+      padding: 8px 12px;
+    }
+  }
