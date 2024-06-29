@@ -8,7 +8,7 @@ $stmt->bind_param("sssssss", $name, $email_id, $password, $confirm_password, $ph
 // Get form data
 $name = $_POST['reg-name'];
 
-$email_id = filter_var($_POST['email_id'], FILTER_VALIDATE_EMAIL);
+$email_id = ($_POST['email_id']);
 $password = password_hash($_POST['reg-password'], PASSWORD_DEFAULT); // Hash the password for security
 $confirm_password = password_hash($_POST['confirm-password'], PASSWORD_DEFAULT); // Hash the confirm password for security
 $phone_number = $_POST['phone'];
@@ -21,7 +21,6 @@ if (!password_verify($_POST['confirm-password'], $password)) {
 }
 
 $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-
 
 // Execute the prepared statement
 if ($stmt->execute()) {

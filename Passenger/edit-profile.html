@@ -1,115 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Profile</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="profile.css">
     <link rel="stylesheet" href="dshboard.css">
 </head>
+
 <body>
 
-
-    <div class="sidebar" id="sidebar">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeSidebar()">&times;</a>
-        <a href="Profile.html">Profile</a>
-        <a href="subject.html">Current Stock</a>
-        <a href="data.html">Notification</a>
-        <a href="reservation.html">Histrical Data</a>
-       
-        <div class="dropdown">
-         <a href="#">Inventory</a>
-          <div class="dropdown-content">
-              <a href="#">Update</a>
-              <a href="reservation-details.html">Reservation</a>
-              
-          </div>
-      </div>
-        <a href="register.html">Log Out</a>
-      </div>
-      
-      <div class="content">
-        <div class="header">
-          <span onclick="openSidebar()">&#9776;</span> <!-- Hamburger menu icon -->
-          <h2>Welcome, <span id="username">Username</span>!</h2>
-        </div>
+    <div class="content">
         <div class="main-content">
-          <!-- Your main content here -->
-          <div class="container">
-            <div class="profile">
-                <h1>Edit Profile</h1>
-                <form id="edit-profile-form">
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" value="John Doe" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" value="john.doe@example.com" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" name="phone" maxlength="10"  value="1234567890" pattern="\d{10}" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="address">Address</label>
-                        <input type="text" id="address" name="address" value="123 Main St, City, Country" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="bedding">Comfort Preferences</label>
-                        <input type="text" id="bedding" name="bedding" value="Soft bedding" required>
-                        <input type="text" id="pillow" name="pillow" value="Feather pillow" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="requests">Special Requests</label>
-                        <input type="text" id="requests" name="requests" value="Allergic to wool" required>
-                    </div>
-                    <button type="submit" class="save-button">Save</button>
-                    <button type="button" class="cancel-button" onclick="location.href='profile.html'">Cancel</button>
-                </form>
-                <div id="message" class="message"></div>
+            <div class="container">
+                <div class="profile">
+                    <h1>Edit Profile</h1>
+                    <form id="edit-profile-form">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" value="John Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" value="john.doe@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" maxlength="10" value="1234567890" pattern="\d{10}" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Address</label>
+                            <input type="text" id="address" name="address" value="123 Main St, City, Country" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="bedding">Comfort Preferences</label>
+                            <input type="text" id="bedding" name="bedding" value="Soft bedding" required>
+                            <input type="text" id="pillow" name="pillow" value="Feather pillow" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="requests">Special Requests</label>
+                            <input type="text" id="requests" name="requests" value="Allergic to wool" required>
+                        </div>
+                        <button type="submit" class="save-button">Save</button>
+                        <button type="button" class="cancel-button" onclick="loadPage('profile.html')">Cancel</button>
+                    </form>
+                    <div id="message" class="message"></div>
+                </div>
             </div>
         </div>
-        <script src="script.js"></script>
-        </div>
-      </div>
-      
-<script>
+    </div>
 
-function openSidebar() {
-  document.getElementById("sidebar").style.width = "250px";
-  document.querySelector(".content").style.marginLeft = "250px";
-}
-
-// Modify the toggleSidebar function to toggle the sidebar open and closed
-// Function to toggle the sidebar
-
-
-
-// Function to close the sidebar
-function closeSidebar() {
-  document.getElementById("sidebar").style.width = "0";
-  document.querySelector(".content").style.marginLeft= "0";
-}
-
-async function fetchUserInfo() {
-        try {
-            const response = await fetch('/userinfo'); // Assuming '/userinfo' is the route to fetch user information
-            const userData = await response.json();
-            const usernameElement = document.getElementById('username');
-            usernameElement.textContent = userData.username; // Update the username in the DOM
-        } catch (error) {
-            console.error('Error fetching user information:', error);
-        }
-    }
-    
-    // Call fetchUserInfo when the page loads
-    fetchUserInfo();
-
-</script>     
-
-
-    
+    <script src="index.js"></script> <!-- Include the JavaScript file -->
 </body>
+
 </html>

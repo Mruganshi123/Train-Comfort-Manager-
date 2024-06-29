@@ -3,72 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Faculty DashBoard</title>
+    <title>Faculty Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="dshboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
     <div class="sidebar" id="sidebar">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeSidebar()">&times;</a>
-        <a href="Profile.html">Profile</a>
-        <a href="subject.html">Current Stock</a>
-        <a href="data.html">Notification</a>
-        <a href="reservation.html">Histrical Data</a>
+        <h2>DashBoard</h2>
+        <div class="bar"></div>
+        <a href="#" onclick="loadPage('register.html')">Home</a>
+        <a href="#" onclick="loadPage('profile.html')">Profile</a>
+        <a href="#" onclick="loadPage('subject.html')">Current Stock</a>
+        <a href="#" onclick="loadPage('notification.html')">Notification</a>
+        <a href="#" onclick="loadPage('reservation-details.html')">Historical Data</a>
        
         <div class="dropdown">
-         <a href="#">Inventory</a>
-          <div class="dropdown-content">
-              <a href="#">Update</a>
-              <a href="reservation-details.html">Reservation</a>
-
-              
-          </div>
-      </div>
-        <a href="register.html">Log Out</a>
-      </div>
+            <a href="#">Inventory</a>
+            <div class="dropdown-content">
+                <a href="#" onclick="loadPage('update.html')">Update</a>
+                <a href="#" onclick="loadPage('reservation.html')">Reservation</a>
+            </div>
+        </div>
+        <a href="#" onclick="loadPage('register.html')">Log Out</a>
+    </div>
       
-      <div class="content">
+    <div class="content">
         <div class="header">
-          <span onclick="openSidebar()">&#9776;</span> <!-- Hamburger menu icon -->
-          <h2>Welcome, <span id="username">Username</span>!</h2>
+            <span class="menu-icon openbtn" onclick="toggleSidebar()">&#9776;</span> <!-- Hamburger menu icon -->
+            <span class="closebtn" onclick="toggleSidebar()">&times;</span> <!-- Close icon (hidden initially) -->
+            <h2>Welcome, <span id="username">Username</span>!</h2>
         </div>
-        <div class="main-content">
-          <!-- Your main content here -->
+        <div class="main-content" id="mainContent">
+            <!-- Content will be dynamically loaded here -->
         </div>
-      </div>
-      
-<script>
+    </div>
 
-function openSidebar() {
-  document.getElementById("sidebar").style.width = "250px";
-  document.querySelector(".content").style.marginLeft = "250px";
-}
-
-// Modify the toggleSidebar function to toggle the sidebar open and closed
-// Function to toggle the sidebar
-
-
-
-// Function to close the sidebar
-function closeSidebar() {
-  document.getElementById("sidebar").style.width = "0";
-  document.querySelector(".content").style.marginLeft= "0";
-}
-
-async function fetchUserInfo() {
-        try {
-            const response = await fetch('/userinfo'); // Assuming '/userinfo' is the route to fetch user information
-            const userData = await response.json();
-            const usernameElement = document.getElementById('username');
-            usernameElement.textContent = userData.username; // Update the username in the DOM
-        } catch (error) {
-            console.error('Error fetching user information:', error);
-        }
-    }
-    
-    // Call fetchUserInfo when the page loads
-    fetchUserInfo();
-
-</script>      
-      
+    <script src="index.js"></script>
 </body>
 </html>

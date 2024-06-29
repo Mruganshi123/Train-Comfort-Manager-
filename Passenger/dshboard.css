@@ -1,3 +1,10 @@
+/* Global Styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+}
+
 /* Styles for the sidebar */
 .sidebar {
   height: 100%;
@@ -10,94 +17,109 @@
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 60px;
+  color: #fff;
 }
 
-/* Styles for links inside the sidebar */
+.sidebar h2 {
+  margin: 20px;
+  text-align: center;
+}
+
+.sidebar .bar {
+  width: 80%;
+  height: 1px;
+  background-color: #777;
+  margin: 10px auto;
+}
+
 .sidebar a {
-  padding: 10px 15px;
+  padding: 25px;
   text-decoration: none;
-  font-size: 25px;
-  color: #fdf3f3;
+  font-size: 18px;
+  color: #ccc;
   display: block;
   transition: 0.3s;
 }
 
-.sidebar label{
-  padding: 10px 15px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #fdf3f3;
-  display: block;
-  transition: 0.3s;
-}
-
-
-.dropdown {
-  position: relative;
-  display: inline-block;
-  
+.sidebar a:hover {
+  color: white;
+  background-color: #333;
 }
 
 .dropdown-content {
   display: none;
-  margin-left: 50px;
   position: absolute;
-  background-color: #ac9393;
+  background-color: #333;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
 
 .dropdown-content a {
-  color: white;
+  color: #ccc;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
 }
 
-.dropdown-content a:hover {background-color: #f1f1f1}
+.dropdown-content a:hover {
+  background-color: #555;
+}
 
 .dropdown:hover .dropdown-content {
   display: block;
 }
 
-
-
-
-
-
-/* Change color on hover */
-.sidebar a:hover {
-  color: #cf9797;
+/* Styles for the header */
+.header {
+  height: 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #222;
+  color: #fff;
 }
 
-.sidebar.open {
-  width: 250px; /* Set desired width for the sidebar */
+.header h2 {
+  margin: 0;
+  font-size: 24px;
 }
 
-/* Styles for the hamburger menu icon */
-.header span {
-  font-size: 30px;
+.header .menu-icon {
+  font-size: 28px;
   cursor: pointer;
+}
+
+.header .closebtn {
+  font-size: 28px;
+  cursor: pointer;
+  display: none;
 }
 
 /* Styles for the content */
 .content {
   transition: margin-left 0.5s;
-  padding: 16px;
-  background-color: #2e516f;
-  color: whitesmoke;
-  height: 80px;
+  padding: 10px;
+  margin-left: 0;
 }
 
-/* Styles for the header */
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-/* Styles for the main content */
 .main-content {
-  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .sidebar {
+      padding-top: 15px;
+  }
+
+  .sidebar a {
+      font-size: 16px;
+  }
+
+  .dropdown-content {
+      margin-left: 120px;
+  }
 }

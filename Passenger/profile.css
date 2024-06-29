@@ -8,14 +8,9 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Add box shadow */
 }
 
-
-
 .profile {
-    max-width: 800px; /* Maintain maximum width */
-    margin: 20px auto; /* Center align and add margin */
+    max-width: 800px; 
     text-align: center;
-    margin-top: 40px;
-    padding: 20px;
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
@@ -68,8 +63,11 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    
+    transition: background-color 0.3s ease, color 0.3s ease;   
+}
+
+.form-group label{
+    font-weight: 700;
 }
 
 .main-content{

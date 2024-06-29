@@ -1,111 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Passenger Profile</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-EXAMPLEHASH=" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="profile.css">
     <link rel="stylesheet" href="dshboard.css">
 </head>
+
 <body>
 
-    <body>
-        <div class="sidebar" id="sidebar">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeSidebar()">&times;</a>
-            <a href="Profile.html">Profile</a>
-            <a href="subject.html">Current Stock</a>
-            <a href="data.html">Notification</a>
-            <a href="reservation.html">Histrical Data</a>
-           
-            <div class="dropdown">
-             <a href="#">Inventory</a>
-              <div class="dropdown-content">
-                  <a href="#">Update</a>
-                  <a href="reservation-details.html">Reservation</a>
-                  
-              </div>
-          </div>
-            <a href="register.html">Log Out</a>
-          </div>
-          
-          <div class="content">
-            <div class="header">
-              <span onclick="openSidebar()">&#9776;</span> <!-- Hamburger menu icon -->
-              <h2>Welcome, <span id="username">Username</span>!</h2>
-            </div>
-            <div class="main-content">
-                <div class="container">
-                    <div class="profile">
-                        <h1>Profile</h1>
-                        <img src="Ankit Image.jpg" alt="User Image" class="user-image">
-                        <div class="section">
-                            <h2><i class="fas fa-user"></i> Personal Information</h2>
-                            <p>Name: John Doe</p>
-                            <p>Email: john.doe@example.com</p>
-                            <p>Phone Number: 123-456-7890</p>
-                            <p>Address: 123 Main St, City, Country</p>
-                        </div>
-                        <div class="section">
-                            <h2><i class="fas fa-plane"></i> Travel History</h2>
-                            <ul>
-                                <li>Trip to City A</li>
-                                <li>Trip to City B</li>
-                                <li>Trip to City C</li>
-                            </ul>
-                        </div>
-                        <div class="section">
-                            <h2><i class="fas fa-bed"></i> Preferences</h2>
-                            <p>Bedding Type: Soft</p>
-                            <p>Pillow Type: Feather</p>
-                        </div>
-                        <div class="section">
-                            <h2><i class="fas fa-star"></i> Special Requests</h2>
-                            <p>Allergic to wool</p>
-                        </div>
-                        <button class="edit-button" onclick="location.href='edit-profile.html'">Edit Profile</button>
+    <div class="content">
+        <div class="main-content">
+            <div class="container">
+                <div class="profile">
+                    <h1>Profile</h1>
+                    <img src="Ankit Image.jpg" alt="User Image" class="user-image">
+                    <div class="section">
+                        <h2><i class="fas fa-user"></i> Personal Information</h2>
+                        <p>Name: John Doe</p>
+                        <p>Email: john.doe@example.com</p>
+                        <p>Phone Number: 123-456-7890</p>
+                        <p>Address: 123 Main St, City, Country</p>
                     </div>
+                    <div class="section">
+                        <h2><i class="fas fa-plane"></i> Travel History</h2>
+                        <ul>
+                            <li>Trip to City A</li>
+                            <li>Trip to City B</li>
+                            <li>Trip to City C</li>
+                        </ul>
+                    </div>
+                    <div class="section">
+                        <h2><i class="fas fa-bed"></i> Preferences</h2>
+                        <p>Bedding Type: Soft</p>
+                        <p>Pillow Type: Feather</p>
+                    </div>
+                    <div class="section">
+                        <h2><i class="fas fa-star"></i> Special Requests</h2>
+                        <p>Allergic to wool</p>
+                    </div>
+                    <!-- Example button in profile.html -->
+                    <button class="edit-button" onclick="loadPage('edit-profile.html')">Edit Profile</button>
                 </div>
             </div>
-          </div>
-          
-    <script>
-    
-    function openSidebar() {
-      document.getElementById("sidebar").style.width = "250px";
-      document.querySelector(".content").style.marginLeft = "250px";
-    }
-    
-    // Modify the toggleSidebar function to toggle the sidebar open and closed
-    // Function to toggle the sidebar
-    
-    
-    
-    // Function to close the sidebar
-    function closeSidebar() {
-      document.getElementById("sidebar").style.width = "0";
-      document.querySelector(".content").style.marginLeft= "0";
-    }
-    
-    async function fetchUserInfo() {
-            try {
-                const response = await fetch('/userinfo'); // Assuming '/userinfo' is the route to fetch user information
-                const userData = await response.json();
-                const usernameElement = document.getElementById('username');
-                usernameElement.textContent = userData.username; // Update the username in the DOM
-            } catch (error) {
-                console.error('Error fetching user information:', error);
-            }
-        }
-        
-        // Call fetchUserInfo when the page loads
-        fetchUserInfo();
-    
-    </script>     
+        </div>
+    </div>
 
-
-    
+    <script src="index.js"></script> <!-- Include the JavaScript file -->
 </body>
+
 </html>

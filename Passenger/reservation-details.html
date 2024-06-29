@@ -10,29 +10,8 @@
 </head>
 <body>
 
-    <div class="sidebar" id="sidebar">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeSidebar()">&times;</a>
-        <a href="Profile.html">Profile</a>
-        <a href="subject.html">Current Stock</a>
-        <a href="data.html">Notification</a>
-        <a href="reservation.html">Histrical Data</a>
-       
-        <div class="dropdown">
-         <a href="#">Inventory</a>
-          <div class="dropdown-content">
-              <a href="#">Update</a>
-              <a href="reservation-details.html">Reservation</a>
-              
-          </div>
-      </div>
-        <a href="register.html">Log Out</a>
-      </div>
-      
       <div class="content">
-        <div class="header">
-          <span onclick="openSidebar()">&#9776;</span> <!-- Hamburger menu icon -->
-          <h2>Welcome, <span id="username">Username</span>!</h2>
-        </div>
+      
         <div class="main-content">
           <!-- Your main content here -->
 
@@ -66,39 +45,6 @@
         </div>
       </div>
       
-<script>
 
-function openSidebar() {
-  document.getElementById("sidebar").style.width = "250px";
-  document.querySelector(".content").style.marginLeft = "250px";
-}
-
-// Modify the toggleSidebar function to toggle the sidebar open and closed
-// Function to toggle the sidebar
-
-
-
-// Function to close the sidebar
-function closeSidebar() {
-  document.getElementById("sidebar").style.width = "0";
-  document.querySelector(".content").style.marginLeft= "0";
-}
-
-async function fetchUserInfo() {
-        try {
-            const response = await fetch('/userinfo'); // Assuming '/userinfo' is the route to fetch user information
-            const userData = await response.json();
-            const usernameElement = document.getElementById('username');
-            usernameElement.textContent = userData.username; // Update the username in the DOM
-        } catch (error) {
-            console.error('Error fetching user information:', error);
-        }
-    }
-    
-    // Call fetchUserInfo when the page loads
-    fetchUserInfo();
-
-</script>     
-    
 </body>
 </html>
