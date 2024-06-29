@@ -47,33 +47,32 @@
 
 
           
-          
           <li class="nav-item">
             <a href="../train-staff/passanger.php" class="nav-link">
-              <i class="nav-icon fas fa-copy"></i>
+              <i class="nav-icon far fa-calendar-alt"></i>
               <p>
-               total allocation
-                <i class="fas fa-angle-left right"></i>
-                <span class="badge badge-info right">6</span>
+                total allocation
+                <span class="badge badge-info right">2</span>
               </p>
             </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="../asset/pages/layout/top-nav.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>already </p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="../asset/layout/top-nav-sidebar.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>onboard</p>
-                </a>
-              </li>
-              
-              
-            </ul>
+          </li> <li class="nav-item">
+            <a href="../asset/pages/calendar.html" class="nav-link">
+              <i class="nav-icon far fa-calendar-alt"></i>
+              <p>
+                alredy
+                <span class="badge badge-info right">2</span>
+              </p>
+            </a>
+          </li> <li class="nav-item">
+            <a href="../asset/pages/calendar.html" class="nav-link">
+              <i class="nav-icon far fa-calendar-alt"></i>
+              <p>
+                onboard
+                <span class="badge badge-info right">2</span>
+              </p>
+            </a>
           </li>
+          
           <li class="nav-item">
             <a href="../asset/pages/calendar.html" class="nav-link">
               <i class="nav-icon far fa-calendar-alt"></i>

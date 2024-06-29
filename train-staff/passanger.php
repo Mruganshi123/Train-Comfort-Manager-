@@ -6,7 +6,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>measurment table</title>
+  <title>passanger bed roll reservation table</title>
   <style>
     th {
       text-align: center;
@@ -25,7 +25,7 @@
   <!-- ... (wrapper and other HTML structure) ... -->
   <div class="wrapper">
     <?php
-    include("C:/xampp/htdocs/ws/kruti_admin/admin/include/sidebar.php");
+    include("../components/sidebar.php");
     ?>
 
     <div class="content-wrapper">
