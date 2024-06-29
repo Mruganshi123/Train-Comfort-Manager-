@@ -1,0 +1,129 @@
+
+
+.container {
+    width: 100%;
+    max-width: 800px; /* Adjust max-width as needed */
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    color: black;
+}
+
+.reservation, .reservation-details {
+    text-align: center;
+}
+
+.reservation h1, .reservation-details h1 {
+    color: #007bff;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.section {
+    margin-bottom: 20px;
+    text-align: left;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.section h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.section ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.section li {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.section li:hover {
+    background-color: #e0e0e0;
+}
+
+.reserve-button, .confirm-button, .cancel-button, .view-details-button {
+    padding: 12px 20px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.reserve-button {
+    background-color: #28a745;
+    color: white;
+}
+
+.reserve-button:hover {
+    background-color: #218838;
+}
+
+.confirm-button {
+    background-color: #007bff;
+    color: white;
+}
+
+.confirm-button:hover {
+    background-color: #0056b3;
+}
+
+.cancel-button {
+    background-color: #dc3545;
+    color: white;
+    margin-left: 10px;
+}
+
+.cancel-button:hover {
+    background-color: #c82333;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    .reservation h1, .reservation-details h1 {
+        font-size: 1.8em;
+    }
+
+    .section h2 {
+        font-size: 1.3em;
+    }
+
+    .reserve-button, .confirm-button, .cancel-button, .view-details-button {
+        font-size: 0.9em;
+        padding: 10px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+
+    .reservation h1, .reservation-details h1 {
+        font-size: 1.5em;
+    }
+
+    .section h2 {
+        font-size: 1.2em;
+    }
+
+    .reserve-button, .confirm-button, .cancel-button, .view-details-button {
+        font-size: 0.8em;
+        padding: 8px 12px;
+    }
+}
