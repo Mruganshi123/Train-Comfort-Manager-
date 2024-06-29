@@ -25,21 +25,11 @@ include '../database/conn.php';
       <div class="container-fluid">
         <div class="row mt-9 mb-3 pl-5 pr-5">
           <div class="col-md-4 offset-md-2">
-            <div class="card bg-secondary">
-              <div class="card-body text-white">
-                <br>
-                <h4><b>1202</b></h4>
-                <h4><b>Allocated</b></h4>
-              </div>
-            </div>
+            
           </div>
           <div class="col-md-4">
             <div class="card bg-success">
-              <div class="card-body text-white">
-                <br>
-                <h4><b>3000</b></h4>
-                <h4><b>Total Quantity</b></h4>
-              </div>
+              
             </div>
           </div>
         </div>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,283 +10,238 @@
   include("../components/header.php");
   ?>
 </head>
+
 <body class="hold-transition sidebar-mini layout-fixed">
-<div class="wrapper">
+  <div class="wrapper">
 
-  <!-- Navbar -->
-  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
-    <!-- Left navbar links -->
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
-      </li>
-      <li class="nav-item d-none d-sm-inline-block">
-        <a href="index3.html" class="nav-link">Home</a>
-      </li>
-      <li class="nav-item d-none d-sm-inline-block">
-        <a href="#" class="nav-link">Contact</a>
-      </li>
-    </ul>
+    <!-- Navbar -->
+    <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+      <!-- Left navbar links -->
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+          <a href="index.php" class="nav-link">Home</a>
+        </li>
 
-    <!-- SEARCH FORM -->
-    <form class="form-inline ml-3">
-      <div class="input-group input-group-sm">
-        <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
-        <div class="input-group-append">
-          <button class="btn btn-navbar" type="submit">
-            <i class="fas fa-search"></i>
-          </button>
-        </div>
-      </div>
-    </form>
+      </ul>
 
-    <!-- Right navbar links -->
-    <ul class="navbar-nav ml-auto">
-      <!-- Messages Dropdown Menu -->
-      <li class="nav-item dropdown">
-        <a class="nav-link" data-toggle="dropdown" href="#">
-          <i class="far fa-comments"></i>
-          <span class="badge badge-danger navbar-badge">3</span>
-        </a>
-        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-          <a href="#" class="dropdown-item">
-            <!-- Message Start -->
-            <div class="media">
-              <img src="../asset/dist/img/user1-128x128.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle">
-              <div class="media-body">
-                <h3 class="dropdown-item-title">
-                  Brad Diesel
-                  <span class="float-right text-sm text-danger"><i class="fas fa-star"></i></span>
-                </h3>
-                <p class="text-sm">Call me whenever you can...</p>
-                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
-              </div>
-            </div>
-            <!-- Message End -->
-          </a>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item">
-            <!-- Message Start -->
-            <div class="media">
-              <img src="../asset/dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
-              <div class="media-body">
-                <h3 class="dropdown-item-title">
-                  John Pierce
-                  <span class="float-right text-sm text-muted"><i class="fas fa-star"></i></span>
-                </h3>
-                <p class="text-sm">I got your message bro</p>
-                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
-              </div>
-            </div>
-            <!-- Message End -->
-          </a>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item">
-            <!-- Message Start -->
-            <div class="media">
-              <img src="../asset/dist/img/user3-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
-              <div class="media-body">
-                <h3 class="dropdown-item-title">
-                  Nora Silvester
-                  <span class="float-right text-sm text-warning"><i class="fas fa-star"></i></span>
-                </h3>
-                <p class="text-sm">The subject goes here</p>
-                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
-              </div>
-            </div>
-            <!-- Message End -->
-          </a>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
-        </div>
-      </li>
-      <!-- Notifications Dropdown Menu -->
-      <li class="nav-item dropdown">
-        <a class="nav-link" data-toggle="dropdown" href="#">
-          <i class="far fa-bell"></i>
-          <span class="badge badge-warning navbar-badge">15</span>
-        </a>
-        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-          <span class="dropdown-item dropdown-header">15 Notifications</span>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item">
-            <i class="fas fa-envelope mr-2"></i> 4 new messages
-            <span class="float-right text-muted text-sm">3 mins</span>
-          </a>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item">
-            <i class="fas fa-users mr-2"></i> 8 friend requests
-            <span class="float-right text-muted text-sm">12 hours</span>
-          </a>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item">
-            <i class="fas fa-file mr-2"></i> 3 new reports
-            <span class="float-right text-muted text-sm">2 days</span>
-          </a>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
-        </div>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" data-widget="fullscreen" href="#" role="button">
-          <i class="fas fa-expand-arrows-alt"></i>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
-          <i class="fas fa-th-large"></i>
-        </a>
-      </li>
-    </ul>
-  </nav>
-  <!-- /.navbar -->
 
-  <!-- Main Sidebar Container -->
-  <?php
-  include("../components/sidebar.php");
-  ?>
 
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-   
 
-    <!-- Main content -->
-    <section class="content">
-      <div class="container-fluid">
-        <!-- Small boxes (Stat box) -->
-        <?php
-        include("../components/small_boxes.php");
-        ?>
-        <!-- /.row -->
-        <!-- Main row -->
-        <div class="row">
-          <!-- Left col -->
-          <section class="col-lg-7 connectedSortable">
-            <!-- Custom tabs (Charts with tabs)-->
-            <div class="card">
-              <div class="card-header">
-                <h3 class="card-title">
-                  <i class="fas fa-chart-pie mr-1"></i>
-                  Sales
-                </h3>
-                <div class="card-tools">
-                  <ul class="nav nav-pills ml-auto">
-                    <li class="nav-item">
-                      <a class="nav-link active" href="#revenue-chart" data-toggle="tab">Area</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#sales-chart" data-toggle="tab">Donut</a>
-                    </li>
-                  </ul>
+    </nav>
+    <!-- /.navbar -->
+
+    <!-- Main Sidebar Container -->
+    <?php
+    include("../components/sidebar.php");
+    ?>
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+
+
+      <!-- Main content -->
+      <section class="content">
+        <div class="container-fluid">
+          <!-- Small boxes (Stat box) -->
+          <?php
+          include("../components/small_boxes.php");
+          ?>
+          <!-- /.row -->
+          <!-- Main row -->
+          <div class="row">
+            <!-- Left col -->
+            <section class="col-lg-7 connectedSortable">
+              <!-- Custom tabs (Charts with tabs)-->
+              <div class="card">
+                <div class="card-header">
+                  <h3 class="card-title"> New Bed-roll Requests</h3>
                 </div>
-              </div><!-- /.card-header -->
-              <div class="card-body">
-                <div class="tab-content p-0">
-                  <!-- Morris chart - Sales -->
-                  <div class="chart tab-pane active" id="revenue-chart"
-                       style="position: relative; height: 300px;">
-                      <canvas id="revenue-chart-canvas" height="300" style="height: 300px;"></canvas>
-                   </div>
-                  <div class="chart tab-pane" id="sales-chart" style="position: relative; height: 300px;">
-                    <canvas id="sales-chart-canvas" height="300" style="height: 300px;"></canvas>
-                  </div>
-                </div>
-              </div><!-- /.card-body -->
-            </div>
-            <!-- /.card -->
+                <!-- /.card-header -->
+                <div class="card-body">
+                  <table id="example1" class="table table-bordered table-striped">
+                    <thead>
+                      <tr>
+                        <th>Reservation_id</th>
+                        <th rowspan="2">Name</th>
+                        <th rowspan="2">Phone Number</th>
+                        <th rowspan="2">Train Number</th>
+                        <th rowspan="2">Bed Roll</th>
+                        <th rowspan="2">Allocated</th>
+                        <th rowspan="2">Reserve Date</th>
+                      </tr>
+                    </thead>
 
-            <!-- DIRECT CHAT -->
-           
-            <!--/.direct-chat -->
+                    <tbody>
+                      <?php
+                      $qry = "
+                      SELECT 
+                        reservations.reserv_id AS reservation_id,
+                        reservations.bed_roll_reserved AS bed_reserved,
+                        users.name AS user_name,
+                        users.phone_number AS user_phone_number,
+                        reservations.reservation_date AS reserve_date,
+                        trains.train_number AS train_number,
+                        preferences.bed_roll_allocated AS bed_allocated
+                      FROM 
+                        reservations
+                      JOIN 
+                        users ON reservations.user_id = users.user_id
+                      JOIN 
+                        trips ON reservations.trip_id = trips.trip_id
+                      JOIN 
+                        trains ON trips.train_id = trains.train_id
+                      JOIN
+                        preferences ON preferences.user_id = users.user_id
+                       WHERE 
+                        reservations.bed_roll_reserved = 0 ;
+                        ";
 
-            <!-- TO DO List -->
-            
-            <!-- /.card -->
-          </section>
-          <!-- /.Left col -->
+                      $res = mysqli_query($conn, $qry);
+                      if (!$res) {
+                        echo "Error occurred: " . mysqli_error($conn);
+                      } else {
+                        while ($row = mysqli_fetch_assoc($res)) {
+                      ?>
+                          <tr>
+                            <td><?php echo $row['reservation_id']; ?></td>
+                            <td><?php echo $row['user_name']; ?></td>
+                            <td><?php echo $row['user_phone_number']; ?></td>
+                            <td><?php echo $row['train_number']; ?></td>
+                            <td>
+                              <?php
+                              if ($row['bed_reserved'] == 0) {
+                                echo '<span class="badge badge-warning">Not Reserved</span>';
+                              } else {
+                                echo '<span class="badge badge-success">Reserved</span>';
+                              }
 
-          <!-- right col (We are only adding the ID to make the widgets sortable)-->
-          <section class="col-lg-5 connectedSortable">
+                              ?></td>
+                            <td>
+                              <?php
+                              if ($row['bed_allocated'] == 0) {
+                                echo '<span class="badge badge-warning">Pending</span>';
+                              } else {
+                                echo '<span class="badge badge-success">Allocated</span>';
+                              }
 
-            <!-- Map card -->
-           
-            <!-- /.card -->
-
-            <!-- solid sales graph -->
-            <div class="card bg-gradient-info">
-              <div class="card-header border-0">
-                <h3 class="card-title">
-                  <i class="fas fa-th mr-1"></i>
-                  Sales Graph
-                </h3>
-
-                <div class="card-tools">
-                  <button type="button" class="btn bg-info btn-sm" data-card-widget="collapse">
-                    <i class="fas fa-minus"></i>
-                  </button>
-                  <button type="button" class="btn bg-info btn-sm" data-card-widget="remove">
-                    <i class="fas fa-times"></i>
-                  </button>
+                              ?></td>
+                            <td><?php echo $row['reserve_date']; ?></td>
+                          </tr>
+                      <?php
+                        }
+                      }
+                      ?>
+                    </tbody>
+                  </table>
                 </div>
               </div>
-              <div class="card-body">
-                <canvas class="chart" id="line-chart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
-              </div>
+
               <!-- /.card-body -->
-              <div class="card-footer bg-transparent">
-                <div class="row">
-                  <div class="col-4 text-center">
-                    <input type="text" class="knob" data-readonly="true" value="20" data-width="60" data-height="60"
-                           data-fgColor="#39CCCC">
+          
+          <!-- /.card -->
 
-                    <div class="text-white">Mail-Orders</div>
-                  </div>
-                  <!-- ./col -->
-                  <div class="col-4 text-center">
-                    <input type="text" class="knob" data-readonly="true" value="50" data-width="60" data-height="60"
-                           data-fgColor="#39CCCC">
+          <!-- DIRECT CHAT -->
 
-                    <div class="text-white">Online</div>
-                  </div>
-                  <!-- ./col -->
-                  <div class="col-4 text-center">
-                    <input type="text" class="knob" data-readonly="true" value="30" data-width="60" data-height="60"
-                           data-fgColor="#39CCCC">
+          <!--/.direct-chat -->
 
-                    <div class="text-white">In-Store</div>
-                  </div>
-                  <!-- ./col -->
-                </div>
-                <!-- /.row -->
-              </div>
-              <!-- /.card-footer -->
-            </div>
-            <!-- /.card -->
+          <!-- TO DO List -->
 
-            <!-- Calendar -->
-           
-            <!-- /.card -->
-          </section>
-          <!-- right col -->
-        </div>
-        <!-- /.row (main row) -->
-      </div><!-- /.container-fluid -->
-    </section>
-    <!-- /.content -->
+          <!-- /.card -->
+      </section>
+      <!-- /.Left col -->
+
+      <!-- right col (We are only adding the ID to make the widgets sortable)-->
+
+      <section class="col-lg-5 connectedSortable">
+
+        <?php
+        include "C:/xampp/htdocs/ws/Train-Comfort-Manager/database/conn.php";
+
+        // Fetch inventory data
+        $qry_inventory = "
+SELECT 
+  total_pillow,
+  total_sheet,
+  total_blanket,
+  total_hankerchief,
+  last_modified
+FROM 
+  inventory;
+";
+
+        $res_inventory = mysqli_query($conn, $qry_inventory);
+        if (!$res_inventory) {
+          echo "Error occurred: " . mysqli_error($conn);
+        } else {
+          $low_stock = false;
+          $low_items = [];
+
+          while ($row_inventory = mysqli_fetch_assoc($res_inventory)) {
+            // Calculate the threshold for low stock (30% of the total sets)
+            $threshold_pillow = $row_inventory['total_pillow'] * 0.3;
+            $threshold_sheet = $row_inventory['total_sheet'] * 0.3;
+            $threshold_blanket = $row_inventory['total_blanket'] * 0.3;
+            $threshold_hankerchief = $row_inventory['total_hankerchief'] * 0.3;
+
+            // Check if any item is below the threshold
+            if ($row_inventory['total_pillow'] < $threshold_pillow) {
+              $low_stock = true;
+              $low_items[] = 'Pillows';
+            }
+            if ($row_inventory['total_sheet'] < $threshold_sheet) {
+              $low_stock = true;
+              $low_items[] = 'Sheets';
+            }
+            if ($row_inventory['total_blanket'] < $threshold_blanket) {
+              $low_stock = true;
+              $low_items[] = 'Blankets';
+            }
+            if ($row_inventory['total_hankerchief'] < $threshold_hankerchief) {
+              $low_stock = true;
+              $low_items[] = 'Handkerchiefs';
+            }
+          }
+
+          if ($low_stock) {
+            echo '<div class="alert alert-warning" role="alert">';
+            echo 'Low inventory stock for: ' . implode(', ', $low_items);
+            echo '</div>';
+          } else {
+            echo '<div class="alert alert-success" role="alert">';
+            echo 'Inventory levels are sufficient.';
+            echo '</div>';
+          }
+        }
+
+        $conn->close();
+        ?>
+
+      </section>
+      </div>
+      <!-- right col -->
+    </div>
+    <!-- /.row (main row) -->
+  </div><!-- /.container-fluid -->
+  </section>
+  <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
- 
+
 
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
     <!-- Control sidebar content goes here -->
   </aside>
   <!-- /.control-sidebar -->
-</div>
-<!-- ./wrapper -->
+  </div>
+  <!-- ./wrapper -->
 
-<?php
-include("../components/footer.php");
-?>
+  <?php
+  include("../components/footer.php");
+  ?>
 </body>
+
 </html>
