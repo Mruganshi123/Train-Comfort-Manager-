@@ -112,7 +112,7 @@ if ($conn) {
                 <h3><?php echo $available_sets; ?></h3>
 
 
-                <p>Available Bed Rolls</p>
+                <p>Available Bed sets</p>
               </div>
               <div class="icon">
                 <i class="ion ion-person-add"></i>

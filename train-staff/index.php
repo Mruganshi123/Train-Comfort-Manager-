@@ -140,28 +140,28 @@
               </div>
 
               <!-- /.card-body -->
-          
-          <!-- /.card -->
 
-          <!-- DIRECT CHAT -->
+              <!-- /.card -->
 
-          <!--/.direct-chat -->
+              <!-- DIRECT CHAT -->
 
-          <!-- TO DO List -->
+              <!--/.direct-chat -->
 
-          <!-- /.card -->
-      </section>
-      <!-- /.Left col -->
+              <!-- TO DO List -->
 
-      <!-- right col (We are only adding the ID to make the widgets sortable)-->
+              <!-- /.card -->
+            </section>
+            <!-- /.Left col -->
 
-      <section class="col-lg-5 connectedSortable">
+            <!-- right col (We are only adding the ID to make the widgets sortable)-->
 
-        <?php
-        include "C:/xampp/htdocs/ws/Train-Comfort-Manager/database/conn.php";
+            <section class="col-lg-5 connectedSortable">
 
-        // Fetch inventory data
-        $qry_inventory = "
+              <?php
+              include "C:/xampp/htdocs/ws/Train-Comfort-Manager/database/conn.php";
+
+              // Fetch inventory data
+              $qry_inventory = "
 SELECT 
   total_pillow,
   total_sheet,
@@ -172,58 +172,172 @@ FROM
   inventory;
 ";
 
-        $res_inventory = mysqli_query($conn, $qry_inventory);
-        if (!$res_inventory) {
-          echo "Error occurred: " . mysqli_error($conn);
-        } else {
-          $low_stock = false;
-          $low_items = [];
+              $res_inventory = mysqli_query($conn, $qry_inventory);
+              if (!$res_inventory) {
+                echo "Error occurred: " . mysqli_error($conn);
+              } else {
+                $low_stock = false;
+                $low_items = [];
 
-          while ($row_inventory = mysqli_fetch_assoc($res_inventory)) {
-            // Calculate the threshold for low stock (30% of the total sets)
-            $threshold_pillow = $row_inventory['total_pillow'] * 0.3;
-            $threshold_sheet = $row_inventory['total_sheet'] * 0.3;
-            $threshold_blanket = $row_inventory['total_blanket'] * 0.3;
-            $threshold_hankerchief = $row_inventory['total_hankerchief'] * 0.3;
+                while ($row_inventory = mysqli_fetch_assoc($res_inventory)) {
+                  // Calculate the threshold for low stock (30% of the total sets)
+                  $threshold_pillow = $row_inventory['total_pillow'] * 0.3;
+                  $threshold_sheet = $row_inventory['total_sheet'] * 0.3;
+                  $threshold_blanket = $row_inventory['total_blanket'] * 0.3;
+                  $threshold_hankerchief = $row_inventory['total_hankerchief'] * 0.3;
 
-            // Check if any item is below the threshold
-            if ($row_inventory['total_pillow'] < $threshold_pillow) {
-              $low_stock = true;
-              $low_items[] = 'Pillows';
-            }
-            if ($row_inventory['total_sheet'] < $threshold_sheet) {
-              $low_stock = true;
-              $low_items[] = 'Sheets';
-            }
-            if ($row_inventory['total_blanket'] < $threshold_blanket) {
-              $low_stock = true;
-              $low_items[] = 'Blankets';
-            }
-            if ($row_inventory['total_hankerchief'] < $threshold_hankerchief) {
-              $low_stock = true;
-              $low_items[] = 'Handkerchiefs';
-            }
-          }
+                  // Check if any item is below the threshold
+                  if ($row_inventory['total_pillow'] < $threshold_pillow) {
+                    $low_stock = true;
+                    $low_items[] = 'Pillows';
+                  }
+                  if ($row_inventory['total_sheet'] < $threshold_sheet) {
+                    $low_stock = true;
+                    $low_items[] = 'Sheets';
+                  }
+                  if ($row_inventory['total_blanket'] < $threshold_blanket) {
+                    $low_stock = true;
+                    $low_items[] = 'Blankets';
+                  }
+                  if ($row_inventory['total_hankerchief'] < $threshold_hankerchief) {
+                    $low_stock = true;
+                    $low_items[] = 'Handkerchiefs';
+                  }
+                }
 
-          if ($low_stock) {
-            echo '<div class="alert alert-warning" role="alert">';
-            echo 'Low inventory stock for: ' . implode(', ', $low_items);
-            echo '</div>';
+                if ($low_stock) {
+                  echo '<div class="alert alert-warning" role="alert">';
+                  echo 'Low inventory stock for: ' . implode(', ', $low_items);
+                  echo '</div>';
+                } else {
+                  echo '<div class="alert alert-success" role="alert">';
+                  echo 'Inventory levels are sufficient.';
+                  echo '</div>';
+                }
+              }
+
+              $conn->close();
+              ?>
+              <!-- ananlysis -->
+
+              <div class="col-lg-12">
+  <div class="card">
+    <div class="card-header border-0">
+      
+    </div>
+    <div class="card-body">
+      <div class="d-flex">
+        <p class="d-flex flex-column">
+          <span class="text-bold text-lg">Inventory Overview</span>
+          <span>Bed Sets Over Time</span>
+        </p>
+        
+      </div>
+      <!-- /.d-flex -->
+
+      <div class="position-relative mb-4">
+        <canvas id="inventory-chart" height="200"></canvas>
+      </div>
+
+      
+    </div>
+  </div>
+  <!-- /.card -->
+</div>
+
+<?php
+include "C:/xampp/htdocs/ws/Train-Comfort-Manager/database/conn.php";
+
+// Fetch inventory data
+$qry_inventory = "
+    SELECT 
+        total_pillow,
+        total_sheet,
+        total_blanket,
+        total_hankerchief,
+        last_modified
+    FROM 
+        inventory
+    ORDER BY last_modified DESC
+    LIMIT 4;
+";
+
+$res_inventory = mysqli_query($conn, $qry_inventory);
+
+$bed_set_data = [];
+
+if (!$res_inventory) {
+    echo "Error occurred: " . mysqli_error($conn);
+} else {
+    while ($row_inventory = mysqli_fetch_assoc($res_inventory)) {
+        // Calculate available sets
+        $available_sets = min($row_inventory['total_pillow'], 
+                              $row_inventory['total_sheet'], 
+                              $row_inventory['total_blanket'], 
+                              $row_inventory['total_hankerchief']);
+        // Round to nearest whole number
+        $available_sets = floor($available_sets);
+
+        // Push calculated data to array
+        $bed_set_data[] = $available_sets;
+    }
+}
+
+mysqli_close($conn);
+?>
+
+
+
+              <!-- /.card -->
+          </div>
+
+          <?php
+          include "C:/xampp/htdocs/ws/Train-Comfort-Manager/database/conn.php";
+
+          // Fetch inventory data
+          $qry_inventory = "
+SELECT 
+  total_pillow,
+  total_sheet,
+  total_blanket,
+  total_hankerchief,
+  last_modified
+FROM 
+  inventory
+ORDER BY last_modified DESC
+LIMIT 4;
+";
+
+          $res_inventory = mysqli_query($conn, $qry_inventory);
+
+          $pillow_data = [];
+          $sheet_data = [];
+          $blanket_data = [];
+          $handkerchief_data = [];
+          $dates = [];
+
+          if (!$res_inventory) {
+            echo "Error occurred: " . mysqli_error($conn);
           } else {
-            echo '<div class="alert alert-success" role="alert">';
-            echo 'Inventory levels are sufficient.';
-            echo '</div>';
+            while ($row_inventory = mysqli_fetch_assoc($res_inventory)) {
+              $pillow_data[] = $row_inventory['total_pillow'];
+              $sheet_data[] = $row_inventory['total_sheet'];
+              $blanket_data[] = $row_inventory['total_blanket'];
+              $handkerchief_data[] = $row_inventory['total_hankerchief'];
+              $dates[] = date('d-m-Y', strtotime($row_inventory['last_modified']));
+            }
           }
-        }
 
-        $conn->close();
-        ?>
+          $conn->close();
+          ?>
+
+
 
       </section>
-      </div>
-      <!-- right col -->
     </div>
-    <!-- /.row (main row) -->
+    <!-- right col -->
+  </div>
+  <!-- /.row (main row) -->
   </div><!-- /.container-fluid -->
   </section>
   <!-- /.content -->
@@ -243,5 +357,46 @@ FROM
   include("../components/footer.php");
   ?>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  // Data from PHP
+  const bedSetData = <?php echo json_encode($bed_set_data); ?>;
+  const dates = <?php echo json_encode($dates); ?>;
+
+  const inventoryData = {
+    labels: dates,
+    datasets: [
+      {
+        label: 'Bed Sets',
+        backgroundColor: 'rgba(60,141,188,0.9)',
+        borderColor: 'rgba(60,141,188,0.8)',
+        pointRadius: false,
+        pointColor: '#3b8bba',
+        pointStrokeColor: 'rgba(60,141,188,1)',
+        pointHighlightFill: '#fff',
+        pointHighlightStroke: 'rgba(60,141,188,1)',
+        data: bedSetData
+      }
+    ]
+  };
+
+  const inventoryChart = new Chart(document.getElementById('inventory-chart'), {
+    type: 'bar',
+    data: inventoryData,
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      datasetFill: false,
+      scales: {
+        yAxes: [{
+          ticks: {
+            beginAtZero: true,
+            stepSize: 1 // Ensure y-axis starts at 0 and steps in integers
+          }
+        }]
+      }
+    }
+  });
+</script>
 
 </html>
