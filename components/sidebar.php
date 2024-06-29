@@ -2,7 +2,7 @@
     <!-- Brand Logo -->
     <a href="index3.html" class="brand-link">
       <img src="../asset/dist/img/logo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">Adminstration</span>
+      <span class="brand-text font-weight-light">IRTCT</span>
     </a>
 
     <!-- Sidebar -->
@@ -36,7 +36,7 @@
                with font-awesome or any other icon font library -->
           <li class="nav-item menu-open">
             <a href="#" class="nav-link active">
-              <a href="../train-staff/passanger.php" class="nav-link">
+              <a href="../train-staff/index.php" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
@@ -53,7 +53,7 @@
               <i class="nav-icon far fa-calendar-alt"></i>
               <p>
                 total allocation
-                <span class="badge badge-info right">2</span>
+              
               </p>
             </a>
           </li> <li class="nav-item">
@@ -61,7 +61,7 @@
               <i class="nav-icon far fa-calendar-alt"></i>
               <p>
                 already
-                <span class="badge badge-info right">2</span>
+              
               </p>
             </a>
           </li> <li class="nav-item">
@@ -69,19 +69,19 @@
               <i class="nav-icon far fa-calendar-alt"></i>
               <p>
                 onboard
-                <span class="badge badge-info right">2</span>
+              
               </p>
             </a>
           </li>
           
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a href="../asset/pages/calendar.html" class="nav-link">
               <i class="nav-icon far fa-calendar-alt"></i>
               <p>
                 Requests
                 <span class="badge badge-info right">2</span>
               </p>
-            </a>
+            </a> -->
           </li>
 
           <li class="nav-item">
@@ -94,7 +94,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="../asset/pages/charts/chartjs.html" class="nav-link">
+                <a href="../train-staff/view_inventroy.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>View</p>
                 </a>
@@ -110,7 +110,7 @@
           </li>
           <li class="nav-item">
             <a href="#" id="logoutLink" class="nav-link">
-            <i class="nav-icon fas fa-chart-pie"></i>
+            <i class="nav-icon fa fa-sign-out"></i>
               <p>
                 log out
 
