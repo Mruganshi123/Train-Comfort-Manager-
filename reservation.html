@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Faculty DashBoard</title>
+    <title>Bed Roll Reservation - Reservation Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="reservation.css">
     <link rel="stylesheet" href="dshboard.css">
 </head>
 <body>
+
     <div class="sidebar" id="sidebar">
         <a href="javascript:void(0)" class="closebtn" onclick="closeSidebar()">&times;</a>
         <a href="Profile.html">Profile</a>
@@ -19,7 +22,6 @@
           <div class="dropdown-content">
               <a href="#">Update</a>
               <a href="reservation-details.html">Reservation</a>
-
               
           </div>
       </div>
@@ -33,6 +35,40 @@
         </div>
         <div class="main-content">
           <!-- Your main content here -->
+          <div class="container">
+            <div class="reservation">
+                <h1>Details</h1>
+                <div class="section">
+                    <h2>Upcoming Trips</h2>
+                    <ul>
+                        <li>
+                            <span>Trip to City A</span>
+                            <button class="view-details-button">View Details</button>
+                        </li>
+                        <li>
+                            <span>Trip to City B</span>
+                            <button class="view-details-button">View Details</button>
+                        </li>
+                        <!-- Add more upcoming trips as needed -->
+                    </ul>
+                </div>
+                <div class="section">
+                    <h2>Past Trips</h2>
+                    <ul>
+                        <li>
+                            <span>Trip to City C</span>
+                            <button class="view-details-button">View Details</button>
+                        </li>
+                        <li>
+                            <span>Trip to City D</span>
+                            <button class="view-details-button">View Details</button>
+                        </li>
+                        <!-- Add more past trips as needed -->
+                    </ul>
+                </div>
+               
+            </div>
+        </div>
         </div>
       </div>
       
@@ -68,7 +104,9 @@ async function fetchUserInfo() {
     // Call fetchUserInfo when the page loads
     fetchUserInfo();
 
-</script>      
-      
+</script>    
+
+
+    
 </body>
 </html>
