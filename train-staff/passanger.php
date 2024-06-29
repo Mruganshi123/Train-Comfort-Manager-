@@ -1,3 +1,10 @@
+<?php
+
+// include 'database/conn.php';
+
+include '../database/conn.php';
+
+?>
 
 
 <!DOCTYPE html>
@@ -41,52 +48,37 @@
                     <tr>
                       <!-- Table headers -->
                       <th rowspan="2">User ID</th>
-                      <?php
-                      $dates = [];
-                      // Collect unique dates for each user
-                      foreach ($data as $user) {
-                        $dates = array_merge($dates, array_keys($user));
-                      }
-                      $dates = array_unique($dates);
-                      $dates = array_values(array_diff($dates, ['User ID']));
-
-                      // Display date headers with height and weight
-                      foreach ($dates as $date) {
-                        echo "<th colspan='2'>$date</th>";
-                      }
-                      ?>
-                    </tr>
-                    <tr>
-                      <!-- Sub-headers for height and weight -->
-                      <?php
-                      foreach ($dates as $date) {
-                        echo "</th><th>Height</th><th>Weight</th>";
-                      }
-                      ?>
-                    </tr>
+                      <th rowspan="2">Name</th>
+                      <th rowspan="2">Phone Number</th>
+                      <th rowspan="2">Email Id</th>
+                      <th rowspan="2">Address</th>                     
+                    </tr>  
                   </thead>
+
                   <tbody>
                     <!-- Display data rows -->
                     <?php
-                    if (!empty($data)) {
-                      foreach ($data as $user_id => $user_data) {
-                        echo "<tr>";
-                        echo "<td>$user_id</td>";
-                        foreach ($dates as $date) {
-                          if (isset($user_data[$date])) {
-                            echo "<td>" . ($user_data[$date]['height'] !== null ? $user_data[$date]['height'] : '-') . "</td>";
-                            echo "<td>" . ($user_data[$date]['weight'] !== null ? $user_data[$date]['weight'] : '-') . "</td>";
-                          } else {
-                            echo "<td>-</td><td>-</td>";
-                          }
-                        }
-                        echo "</tr>";
-                      }
-                    } else {
-                      echo "<tr><td colspan='" . (count($dates) * 2 + 1) . "'>No data found</td></tr>";
-                    }
+                        $res = mysqli_query($conn,"SELECT * FROM users WHERE role = 'passenger'");
+                        // $res = $this->db->query("SELECT * FROM users WHERE role = 'passenger'");
+                        while($row = mysqli_fetch_assoc($res)) :
                     ?>
+
+                    <tr>
+
+                      <td><?php echo $row['user_id']?></td>
+                      <td><?php echo $row['name']?></td>
+                      <td><?php echo $row['phone_number']?></td>
+                      <td><?php echo $row['email_id']?></td>
+                      <td><?php echo $row['address']?></td>
+                      
+
+                    </tr>
+
+                    
+        
+                    
                   </tbody>
+                  <?php endwhile; ?>
                 </table>
               </div>
             </div>
