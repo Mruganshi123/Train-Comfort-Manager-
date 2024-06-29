@@ -1,16 +1,8 @@
-<?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$database ="train_comfort";
 
-// Create connection
-$conn = new mysqli($servername, $username, $password, $database);
+<?php 
 
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} 
+$conn= new mysqli('localhost','root','','train_comfort') or die("Could not connect to mysql".mysqli_error($con));
 
-// echo "Connected successfully";
+
+
 ?>
